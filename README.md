@@ -625,17 +625,43 @@ docker run -v `pwd`:`pwd` -w `pwd` --rm -it honkit pdf . ./assets/book.pdf
 
  ## 在 Mac 中使用 apache 服务器 {#MacApache}
 
+### 启动服务
+
 MacOS 中自带了 apache 服务器，只需要输入以下指令即可启动：
 
 ```bash
 sudo apachectl start
 ```
 
-此时，在浏览器中输入: `http://127.0.0.1` 或 `http://127.0.0.1:80` ，若出现 `It works!`，说明服务已经启动。默认情况下，该服务器资源存放在：`/Library/WebServer/Documents `中，将 _book 的内容移动到该文件夹下即可实现 Web 访问。
+此时，在浏览器中输入: `http://127.0.0.1` 或 `http://127.0.0.1:80` ，若出现 `It works!`，说明服务已经启动。默认情况下，该服务器资源存放在：`/Library/WebServer/Documents`中，将 _book 的内容移动到该文件夹下即可实现 Web 访问。
 
-> [!TIP|label:添加所有者权限，以解决频繁要求输入密码的问题]
+>  [!TIP|label:添加所有者权限，以解决频繁要求输入密码的问题]
 >
-> `/Library/WebServer/Documents ` 文件夹的所有者是 `root`，这导致我们增删文件时都需要输入密码。一种解决方案是在文件夹鼠标右键 > 显示简介 > 共享与权限 中添加当前用户权限。此外，可以为该文件夹制作快捷方式、重命名，并放置到其他路径。
+> `/Library/WebServer/Documents` 文件夹的所有者是 `root`，这导致我们增删文件时都需要输入密码。一种解决方案是在文件夹鼠标右键 > 显示简介 > 共享与权限 中添加当前用户权限。此外，可以为该文件夹制作快捷方式、重命名，并放置到其他路径。
+
+### 打开文件访问视图
+
+许多网站除了可以显示 HTTP 网页 (站点服务器路径下的 index.html 文件) 外，还可以使用 “下载模式” 在该路径下显示文件的名称。打开文件访问视图需要修改配置文件: `/etc/apache2/httpd.conf` (通过 访达菜单栏 > 前往 > 前往文件夹打开 该文件)。搜索以下行字段：
+
+```bash
+Options FollowSymLinks Multiviews
+```
+
+将其修改为：
+
+```bash
+Options Indexes FollowSymLinks Multiviews
+```
+
+重启 apache 服务：
+
+```bash
+sudo apachectl restart
+```
+
+此时，目录列表就可以正常访问。
+
+### 停止服务
 
 停止 apache 服务，请输入：
 
