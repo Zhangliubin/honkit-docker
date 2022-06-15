@@ -119,14 +119,14 @@ cd honkit-docker
 honkit-docker 的目录结构如下:
 
 ```bash
-├── LICENSE					开源许可证
-├── README.md				本文档 Web 的主页内容
-├── SUMMARY.md			本文档 Web 的导航信息
-├── book.json				本文档 Web 的配置信息
-├── book.pdf				本文档的 pdf 版, 使用 honkit pdf 导出
-├── docker					docker 镜像
-├── multi-lang			多语言环境模版
-└── single-lang			单语言环境模版
++- LICENSE          开源许可证
++- README.md        本文档 Web 的主页内容
++- SUMMARY.md       本文档 Web 的导航信息
++- book.json        本文档 Web 的配置信息
++- book.pdf         本文档的 pdf 版, 使用 honkit pdf 导出
++- docker           docker 镜像
++- multi-lang       多语言环境模版
++- single-lang      单语言环境模版
 ```
 
 接着，我们通过 dockerfile 安装 honkit 服务：

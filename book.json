@@ -97,10 +97,6 @@
             "label": ""
         },
         "password-pro": {
-            "password": "honkit-docker",
-            "tip": "请输入本项目的项目名 (honkit-docker):",
-            "errorTip": "请复制 honkit-docker 到下面文本框中:",
-            "reject": "好吧, 有缘再见!"
         }
     }
 }
