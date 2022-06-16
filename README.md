@@ -140,7 +140,7 @@ docker build -t honkit -f docker/Dockerfile docker/
 >
 > - 实验室内网: http://192.168.30.2/download/honkit.tar.gz
 > - 中山大学校内网: http://hpc.snplife.com/share/honkit.tar.gz
-> - 校外使用百度云: https://pan.baidu.com/s/1QXrOH1piMT-JONk9bhTf7g 提取码: 5nk4
+> - 校外使用百度云: https://pan.baidu.com/s/1MTPJEa67g1YkZ_6S88gf6w 提取码: 5b83
 >
 > 下载完成后，建议将该文件放在 honkit-docker/docker 目录下，使用以下语句加载镜像：
 >
@@ -351,7 +351,7 @@ docker run -v `pwd`:`pwd` -w `pwd` --rm -it honkit pdf . ./assets/book.pdf
 | prism                    | 代码块配色                                                   |
 | prism-themes             | 代码块配色主题                                               |
 | github-buttons           | 主页面右上角添加 “Github” 链接及图标                         |
-| insert-logo-link-website | 导航栏上面添加 Logo 及可跳转链接                             |
+| summary-logo             | 导航栏上面添加 Logo 及可跳转链接                             |
 | code                     | 代码可复制、显示行号                                         |
 | todo                     | 使得 “任务列表” 样式不可编辑                                 |
 | flexible-alerts          | 扩展高亮语法                                                 |
@@ -367,7 +367,7 @@ docker run -v `pwd`:`pwd` -w `pwd` --rm -it honkit pdf . ./assets/book.pdf
 - 版权信息：`pagefooter-freedom` 的 `copyright`
   - 在多语言环境下，还需要修改子语言文件夹中的 `book.json` 文件
 - 下载 PDF：`get-pdf` 的 `base`
-- 网页导航 logo：`insert-logo-link-website` 的 `url` 和 `link`
+- 网页导航 logo：`summary-logo` 的 `url` 和 `link`
 - 网页密码：`password-pro`
 
 请注意，涉及路径信息的参数尽量保持格式一致 (相对路径、绝对路径、网页路径)。为了节省带宽资源，本页面的所有下载链接 (PDF、honkit-docker 等) 都托管在 Github 或公共平台。对于较小的服务资源，也可以直接存放在 Web 服务器中。
@@ -616,6 +616,10 @@ docker run -v `pwd`:`pwd` -w `pwd` --rm -it honkit pdf . ./assets/book.pdf
 ```
 
 这里的 `prefix` 就是导出指令中输出文件的文件名。当修改了输出文件名时，请同步修改 `book.json` 中的 `get-pdf` 的 `prefix` 属性字段。
+
+> [!TIP|label:制作 PDF 封面]
+>
+> 在 Word 中使用 A4 纸样式设计好封面，并导出为 `cover.jpg` 到文档根目录下。
 
 # 搭建 Web 服务器 {#WebServer}
 

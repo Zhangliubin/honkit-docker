@@ -14,7 +14,7 @@ RUN npm install gitbook-plugin-favicon-absolute \
                 gitbook-plugin-hide-element \
                 gitbook-plugin-prism gitbook-plugin-prism-themes \
                 gitbook-plugin-github-buttons \
-                gitbook-plugin-insert-logo-link-website \
+                gitbook-plugin-summary-logo \
                 gitbook-plugin-code \
                 gitbook-plugin-todo \
                 gitbook-plugin-flexible-alerts \

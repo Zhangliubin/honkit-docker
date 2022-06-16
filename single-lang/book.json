@@ -19,7 +19,7 @@
         "prism",
         "prism-themes",
         "github-buttons",
-        "insert-logo-link-website",
+        "summary-logo",
         "code",
         "todo",
         "flexible-alerts",
@@ -82,10 +82,10 @@
                 }
             ]
         },
-        "insert-logo-link-website": {
-            "url": "http://pmglab.top/commandParser/assets/department_logo.png",
+        "summary-logo": {
+            "logo": "assets/department_logo.png",
             "link": "https://pmglab.top",
-            "style": "background:#24572c;max-height:45px"
+            "style": "background:#24572c;max-width:300px"
         },
         "code": {
             "copyButtons": true
