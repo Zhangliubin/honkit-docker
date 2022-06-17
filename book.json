@@ -92,7 +92,7 @@
             "copyButtons": true
         },
         "get-pdf": {
-            "base": "https://github.com/Zhangliubin/honkit-docker/tree/main/",
+            "base": "https://github.com/Zhangliubin/honkit-docker/tree/main/assets",
             "prefix": "book",
             "label": ""
         },
