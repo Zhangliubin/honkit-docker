@@ -6,6 +6,8 @@ Honkit/Gitbook 指南: https://snowdreams1006.github.io/markdown/
 
 Docker 指南: https://tsejx.github.io/devops-guidebook/deploy/docker/overview
 
+Docker 官方文档 (强烈建议快速阅读): https://docs.docker.com/get-started/overview/ 和 https://docs.docker.com/desktop/
+
 ## 项目示例 {#项目示例}
 
 ### Command Parser {#CommandParser}
@@ -51,6 +53,8 @@ Typora 语法教程: https://support.typoraio.cn/zh/Markdown-Reference/
 **Step3:** 前往 https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package 下载内核更新包。
 
 > [!NOTE|label:安装完成后需要重启设备]
+>
+> 官方指南: https://docs.docker.com/desktop/windows/install/
 
 ### MacOS {#MacOS-Install}
 
@@ -65,40 +69,6 @@ Macos 系统前往 https://www.docker.com/get-started/ 下载安装，即可直�
 # 使用 homebrew 安装 docker
 brew install --cask docker
 ```
-
-### Ubuntu {#Ubuntu-Install}
-
-使用国内镜像进行安装：
-
-```shell
-# install curl
-apt-get update
-apt-get install curl -y
-
-# use aliyun image to auto-install docker
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-```
-
-启动：
-
-```shell
-sudo systemctl enable docker
-sudo systemctl start docker
-```
-
-默认情况下，docker 命令会使用 Unix socket 与 Docker 引擎通讯。而只有 root 用户和 docker 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 root 用户。因此，更好地做法是将需要使用 docker 的用户加入 docker 用户组。建立 docker 组：
-
-```shell
-sudo groupadd docker
-```
-
-将当前用户加入 docker 组：
-
-```shell
-sudo usermod -aG docker $USER
-```
-
-退出当前终端并重新登录。
 
 ## 通过 Dockerfile 构建 Honkit 服务镜像 {#Honkit}
 

@@ -70,7 +70,8 @@
                 "prism-themes/themes/prism-one-light.css"
             ],
             "lang": {
-                "shell": "bash"
+                "shell": "bash",
+                "dockerfile": "bash"
             }
         },
         "github-buttons": {
