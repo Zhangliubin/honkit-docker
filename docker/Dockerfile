@@ -22,7 +22,8 @@ RUN npm install gitbook-plugin-favicon-absolute \
                 gitbook-plugin-language-picker \
                 gitbook-plugin-pagefooter-freedom \
                 gitbook-plugin-get-pdf \
-                gitbook-plugin-password-pro
+                gitbook-plugin-password-pro \
+                gitbook-plugin-auto-scroll-table
 
 COPY fonts/SIMSUN.TTC /usr/share/fonts
 

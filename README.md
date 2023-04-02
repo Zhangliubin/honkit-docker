@@ -108,7 +108,6 @@ docker build -t honkit -f docker/Dockerfile docker/
 
 > [!NOTE|label:如果无法构建该镜像 (通常是网络连接问题)，也可以选择下载打包好的镜像]
 >
-> - 实验室内网: http://192.168.30.2/download/honkit.tar.gz
 > - 中山大学校内网: http://hpc.snplife.com/share/honkit.tar.gz
 > - 校外使用百度云: https://pan.baidu.com/s/1MTPJEa67g1YkZ_6S88gf6w 提取码: 5b83
 >
@@ -131,7 +130,7 @@ docker build -t honkit -f docker/Dockerfile docker/
 >
 > 因此，这三个文件夹都支持下面的操作 2~4 (搭建服务、构建网页文件夹、创建 PDF)
 
-### Windows {#UseHonkit-Windows}
+### Windows (CMD) {#UseHonkit-Windows}
 
 #### 1. 初始化环境 {#Windows-Honkit-Init}
 
@@ -140,7 +139,7 @@ docker build -t honkit -f docker/Dockerfile docker/
 ```bash
 # 语法: honkit init [workspace]
 # 默认: honkit init .
-docker run -v %cd%:/.honkit/ -w /.honkit/ --rm -it honkit init .
+docker run -v `pwd`:/.honkit/ -w /.honkit/ --rm -it honkit init .
 ```
 
 随后 `[workspace]` 文件夹中出现 `SUMMARY.md` 和 `README.md` 文件。**这两个文件是启动 Honkit 必备的文件**。
@@ -161,7 +160,7 @@ docker run -v %cd%:/.honkit/ -w /.honkit/ --rm -it honkit init .
 ```bash
 # 语法: honkit serve [workspace] [output_dir]
 # 默认: honkit serve . ./_book
-docker run -it --init -p 4000:4000 -v %cd%:/.honkit/ -w /.honkit/ --rm honkit serve . ./_book
+docker run -it --init -p 4000:4000 -v `pwd`:/.honkit/ -w /.honkit/ --rm honkit serve . ./_book
 ```
 
 等待服务构建完成后 (即出现 `Serving book on http://localhost:4000`)，在浏览器中输入 `http://localhost:4000` 或 `http://127.0.0.1:4000/` 访问网站。
@@ -183,7 +182,7 @@ docker run -it --init -p 4000:4000 -v %cd%:/.honkit/ -w /.honkit/ --rm honkit se
 ```bash
 # 语法: honkit build [workspace] [output_dir]
 # 默认: honkit build . ./_book
-docker run -v %cd%:/.honkit/ -w /.honkit/ --rm -it honkit build . ./_book
+docker run -v `pwd`:/.honkit/ -w /.honkit/ --rm -it honkit build . ./_book
 ```
 
 该指令会在 `[workspace]` 目录下生成 `[output_dir]` 文件夹，该文件夹内的文件即为网页资源。
@@ -197,7 +196,7 @@ docker run -v %cd%:/.honkit/ -w /.honkit/ --rm -it honkit build . ./_book
 ```bash
 # 语法: honkit pdf [workspace] [output]
 # 默认: honkit pdf . ./book
-docker run -v %cd%:/.honkit/ -w /.honkit/ --rm -it honkit pdf . ./assets/book.pdf
+docker run -v `cd`:/.honkit/ -w /.honkit/ --rm -it honkit pdf . ./assets/book.pdf
 ```
 
 在单语言环境下，该指令会导出文件 `[output]`；
